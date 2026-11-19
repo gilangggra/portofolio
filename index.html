@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gilang Ramadan | Full-stack Developer Portfolio</title>
+  <meta name="description" content="Portofolio resmi Gilang Ramadan, Full-stack Developer. Membangun aplikasi web performa tinggi, sistem backend andal, dan arsitektur data terukur." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="bg-[#0b0c10] text-[#f8fafc] antialiased selection:bg-[#38bdf8] selection:text-[#0b0c10] min-h-screen flex flex-col">
+
+  <!-- Header & Navigasi -->
+  <header class="sticky top-0 z-50 w-full border-b border-[#232838] bg-[#0b0c10]/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group focus-visible:ring-2 focus-visible:ring-[#38bdf8] rounded px-1 py-0.5">
+        <span class="font-mono-code font-bold text-lg tracking-tight text-[#38bdf8]">GR</span>
+        <span class="text-xs font-mono-code text-[#94a3b8] hidden sm:inline">// full-stack.dev</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Navigasi Utama" class="hidden md:flex items-center gap-7">
+        <a href="#projek" class="text-sm font-medium text-[#94a3b8] hover:text-[#f8fafc] transition-colors">Projek</a>
+        <a href="#stack" class="text-sm font-medium text-[#94a3b8] hover:text-[#f8fafc] transition-colors">Keahlian</a>
+        <a href="#pengalaman" class="text-sm font-medium text-[#94a3b8] hover:text-[#f8fafc] transition-colors">Pengalaman</a>
+        <a href="#artikel" class="text-sm font-medium text-[#94a3b8] hover:text-[#f8fafc] transition-colors">Artikel</a>
+        <a href="#kontak" class="text-sm font-medium text-[#94a3b8] hover:text-[#f8fafc] transition-colors">Kontak</a>
+      </nav>
+
+      <!-- Desktop Action -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#kontak" class="inline-flex items-center justify-center text-xs font-mono-code font-medium px-4 py-2 rounded-md bg-[#1a1e2b] text-[#f8fafc] border border-[#2e354a] hover:border-[#38bdf8] hover:bg-[#232838] transition-all">
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b] border border-[#232838]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Buka menu navigasi">
+        <svg id="menu-icon-open" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-[#232838] bg-[#10131a] px-4 pt-3 pb-5 space-y-2">
+      <a href="#projek" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b]">Projek</a>
+      <a href="#stack" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b]">Keahlian</a>
+      <a href="#pengalaman" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b]">Pengalaman</a>
+      <a href="#artikel" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b]">Artikel</a>
+      <a href="#kontak" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b]">Kontak</a>
+      <div class="pt-2">
+        <a href="#kontak" class="mobile-nav-link block text-center text-sm font-mono-code font-medium px-4 py-2.5 rounded-md bg-[#38bdf8] text-[#0b0c10] font-semibold">
+          Kirim Pesan Langsung
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="py-16 md:py-24 border-b border-[#232838] relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl">
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-md border border-[#232838] bg-[#13161f] text-xs font-mono-code text-[#94a3b8] mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+            <span>Tersedia untuk proyek baru dan kolaborasi teknis</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold font-mono-code tracking-tight text-[#f8fafc] leading-tight mb-6">
+            Full-stack Developer & Systems Builder.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-[#94a3b8] leading-relaxed mb-8 max-w-2xl">
+            Halo, saya <span class="text-[#f8fafc] font-medium">Gilang Ramadan</span>. Saya fokus merancang aplikasi web modern dengan fondasi arsitektur backend yang kokoh, API terstruktur, serta antarmuka pengguna yang cepat dan responsif.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#projek" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[#f8fafc] text-[#0b0c10] font-semibold text-sm hover:bg-[#e2e8f0] transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10] focus-visible:ring-[#f8fafc]">
+              Lihat Projek Terpilih
+            </a>
+            <a href="#kontak" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[#13161f] text-[#f8fafc] border border-[#232838] font-mono-code text-sm hover:border-[#38bdf8] hover:bg-[#1a1e2b] transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10] focus-visible:ring-[#38bdf8]">
+              Kirim Pesan Kolaborasi
+            </a>
+          </div>
+
+          <!-- Quick Specs List -->
+          <div class="mt-12 pt-8 border-t border-[#1a1e2b] grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono-code text-[#94a3b8]">
+            <div>
+              <span class="block text-[#64748b] mb-1">Fokus Utama</span>
+              <span class="text-[#f8fafc]">Web & API Core</span>
+            </div>
+            <div>
+              <span class="block text-[#64748b] mb-1">Stack Utama</span>
+              <span class="text-[#f8fafc]">TypeScript & Go</span>
+            </div>
+            <div>
+              <span class="block text-[#64748b] mb-1">Database</span>
+              <span class="text-[#f8fafc]">PostgreSQL & Redis</span>
+            </div>
+            <div>
+              <span class="block text-[#64748b] mb-1">Lokasi Kerja</span>
+              <span class="text-[#f8fafc]">Indonesia (WIB / Remote)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projek Terpilih -->
+    <section id="projek" class="py-16 md:py-24 border-b border-[#232838]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-xs font-mono-code text-[#38bdf8] uppercase tracking-wider block mb-2">// 01. Portfolio Karya</span>
+            <h2 class="text-2xl sm:text-4xl font-bold font-mono-code text-[#f8fafc]">Projek Terpilih</h2>
+          </div>
+          <p class="text-sm text-[#94a3b8] max-w-md">
+            Kumpulan proyek nyata yang dibangun dengan fokus pada kejelasan arsitektur kode, optimasi query, dan kenyamanan pengguna.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <article class="flex flex-col justify-between rounded-lg border border-[#232838] bg-[#13161f] p-6 hover:border-[#38bdf8]/60 transition-colors">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-[#64748b] mb-3">
+                <span>Enterprise Tool</span>
+                <span>2024</span>
+              </div>
+              <h3 class="text-xl font-bold font-mono-code text-[#f8fafc] mb-2">OmniDesk Engine</h3>
+              <p class="text-sm text-[#94a3b8] leading-relaxed mb-5">
+                Aplikasi manajemen tiket dan operasional tim support secara real-time dengan integrasi WebSocket dua arah dan sinkronisasi status otomatis.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#38bdf8] border border-[#232838]">React</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">TypeScript</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">Node.js</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-[#1a1e2b] flex items-center justify-between">
+              <a href="https://github.com/example/omnidesk" target="_blank" rel="noopener noreferrer" class="text-xs font-mono-code text-[#f8fafc] hover:text-[#38bdf8] flex items-center gap-1.5">
+                <span>Buka Kode Sumber</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <button type="button" class="project-detail-btn text-xs font-mono-code text-[#94a3b8] hover:text-[#f8fafc]" data-project="omnidesk">
+                Detail Teknis
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="flex flex-col justify-between rounded-lg border border-[#232838] bg-[#13161f] p-6 hover:border-[#38bdf8]/60 transition-colors">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-[#64748b] mb-3">
+                <span>E-Commerce Backend</span>
+                <span>2024</span>
+              </div>
+              <h3 class="text-xl font-bold font-mono-code text-[#f8fafc] mb-2">CommerceCore API</h3>
+              <p class="text-sm text-[#94a3b8] leading-relaxed mb-5">
+                Microservice transaksi dan katalog terdistribusi yang dirancang untuk menangani beban konkurensi tinggi dengan caching Redis bertingkat.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#38bdf8] border border-[#232838]">Go (Golang)</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">Redis</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">Docker</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">gRPC</span>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-[#1a1e2b] flex items-center justify-between">
+              <a href="https://github.com/example/commercecore" target="_blank" rel="noopener noreferrer" class="text-xs font-mono-code text-[#f8fafc] hover:text-[#38bdf8] flex items-center gap-1.5">
+                <span>Buka Kode Sumber</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <button type="button" class="project-detail-btn text-xs font-mono-code text-[#94a3b8] hover:text-[#f8fafc]" data-project="commercecore">
+                Detail Teknis
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="flex flex-col justify-between rounded-lg border border-[#232838] bg-[#13161f] p-6 hover:border-[#38bdf8]/60 transition-colors">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-[#64748b] mb-3">
+                <span>Developer Observability</span>
+                <span>2023</span>
+              </div>
+              <h3 class="text-xl font-bold font-mono-code text-[#f8fafc] mb-2">DevPulse Analytics</h3>
+              <p class="text-sm text-[#94a3b8] leading-relaxed mb-5">
+                Dashboard metrik pengembang untuk mengukur durasi build CI/CD, riwayat deploy staging, dan deteksi dini kegagalan pipeline otomatis.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#38bdf8] border border-[#232838]">Vite</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">FastAPI</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] border border-[#232838]">ClickHouse</span>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-[#1a1e2b] flex items-center justify-between">
+              <a href="https://github.com/example/devpulse" target="_blank" rel="noopener noreferrer" class="text-xs font-mono-code text-[#f8fafc] hover:text-[#38bdf8] flex items-center gap-1.5">
+                <span>Buka Kode Sumber</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <button type="button" class="project-detail-btn text-xs font-mono-code text-[#94a3b8] hover:text-[#f8fafc]" data-project="devpulse">
+                Detail Teknis
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Stack & Keahlian -->
+    <section id="stack" class="py-16 md:py-24 border-b border-[#232838]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="mb-12">
+          <span class="text-xs font-mono-code text-[#38bdf8] uppercase tracking-wider block mb-2">// 02. Fondasi Teknologi</span>
+          <h2 class="text-2xl sm:text-4xl font-bold font-mono-code text-[#f8fafc]">Tech Stack & Keahlian</h2>
+          <p class="text-sm text-[#94a3b8] mt-2 max-w-xl">
+            Teknologi yang saya gunakan secara aktif untuk membangun produk siap produksi, dikelompokkan berdasarkan fungsinya.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Frontend -->
+          <div class="rounded-lg border border-[#232838] bg-[#13161f] p-5">
+            <h3 class="text-sm font-mono-code font-semibold text-[#f8fafc] pb-3 mb-4 border-b border-[#232838] flex items-center justify-between">
+              <span>Frontend Core</span>
+              <span class="text-xs text-[#38bdf8]">01</span>
+            </h3>
+            <ul class="space-y-2.5 text-sm text-[#94a3b8]">
+              <li class="flex items-center justify-between"><span>TypeScript</span><span class="text-xs font-mono-code text-[#64748b]">Type-safe</span></li>
+              <li class="flex items-center justify-between"><span>React & Next.js</span><span class="text-xs font-mono-code text-[#64748b]">App & SSR</span></li>
+              <li class="flex items-center justify-between"><span>Tailwind CSS</span><span class="text-xs font-mono-code text-[#64748b]">Styling</span></li>
+              <li class="flex items-center justify-between"><span>HTML5 / Semantic</span><span class="text-xs font-mono-code text-[#64748b]">A11y Core</span></li>
+            </ul>
+          </div>
+
+          <!-- Backend -->
+          <div class="rounded-lg border border-[#232838] bg-[#13161f] p-5">
+            <h3 class="text-sm font-mono-code font-semibold text-[#f8fafc] pb-3 mb-4 border-b border-[#232838] flex items-center justify-between">
+              <span>Backend & API</span>
+              <span class="text-xs text-[#38bdf8]">02</span>
+            </h3>
+            <ul class="space-y-2.5 text-sm text-[#94a3b8]">
+              <li class="flex items-center justify-between"><span>Node.js / Express</span><span class="text-xs font-mono-code text-[#64748b]">RESTful</span></li>
+              <li class="flex items-center justify-between"><span>Go (Golang)</span><span class="text-xs font-mono-code text-[#64748b]">High TPS</span></li>
+              <li class="flex items-center justify-between"><span>Python</span><span class="text-xs font-mono-code text-[#64748b]">Scripting</span></li>
+              <li class="flex items-center justify-between"><span>WebSocket & gRPC</span><span class="text-xs font-mono-code text-[#64748b]">Streaming</span></li>
+            </ul>
+          </div>
+
+          <!-- Database -->
+          <div class="rounded-lg border border-[#232838] bg-[#13161f] p-5">
+            <h3 class="text-sm font-mono-code font-semibold text-[#f8fafc] pb-3 mb-4 border-b border-[#232838] flex items-center justify-between">
+              <span>Data & Storage</span>
+              <span class="text-xs text-[#38bdf8]">03</span>
+            </h3>
+            <ul class="space-y-2.5 text-sm text-[#94a3b8]">
+              <li class="flex items-center justify-between"><span>PostgreSQL</span><span class="text-xs font-mono-code text-[#64748b]">Relational</span></li>
+              <li class="flex items-center justify-between"><span>Redis</span><span class="text-xs font-mono-code text-[#64748b]">In-memory</span></li>
+              <li class="flex items-center justify-between"><span>Prisma / Drizzle</span><span class="text-xs font-mono-code text-[#64748b]">ORM Layer</span></li>
+              <li class="flex items-center justify-between"><span>Migration Tools</span><span class="text-xs font-mono-code text-[#64748b]">Versioning</span></li>
+            </ul>
+          </div>
+
+          <!-- DevOps -->
+          <div class="rounded-lg border border-[#232838] bg-[#13161f] p-5">
+            <h3 class="text-sm font-mono-code font-semibold text-[#f8fafc] pb-3 mb-4 border-b border-[#232838] flex items-center justify-between">
+              <span>DevOps & Praktik</span>
+              <span class="text-xs text-[#38bdf8]">04</span>
+            </h3>
+            <ul class="space-y-2.5 text-sm text-[#94a3b8]">
+              <li class="flex items-center justify-between"><span>Docker</span><span class="text-xs font-mono-code text-[#64748b]">Container</span></li>
+              <li class="flex items-center justify-between"><span>GitHub Actions</span><span class="text-xs font-mono-code text-[#64748b]">CI / CD</span></li>
+              <li class="flex items-center justify-between"><span>Linux / Bash</span><span class="text-xs font-mono-code text-[#64748b]">Server Env</span></li>
+              <li class="flex items-center justify-between"><span>Git Workflow</span><span class="text-xs font-mono-code text-[#64748b]">Branching</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengalaman Kerja -->
+    <section id="pengalaman" class="py-16 md:py-24 border-b border-[#232838]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="mb-12">
+          <span class="text-xs font-mono-code text-[#38bdf8] uppercase tracking-wider block mb-2">// 03. Riwayat Karier</span>
+          <h2 class="text-2xl sm:text-4xl font-bold font-mono-code text-[#f8fafc]">Pengalaman Kerja</h2>
+        </div>
+
+        <div class="space-y-6 max-w-3xl">
+          <!-- Role 1 -->
+          <div class="rounded-lg border border-[#232838] bg-[#13161f] p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+              <h3 class="text-lg font-bold font-mono-code text-[#f8fafc]">Full-stack Software Engineer</h3>
+              <span class="text-xs font-mono-code text-[#38bdf8]">2023 - Sekarang</span>
+            </div>
+            <p class="text-xs font-mono-code text-[#64748b] mb-4">Proyek Klien & Pengembangan Produk Independen</p>
+            <ul class="space-y-2 text-sm text-[#94a3b8] list-disc list-inside">
+              <li>Merancang arsitektur API backend menggunakan Node.js dan Go untuk klien B2B.</li>
+              <li>Membangun antarmuka web yang teroptimasi dengan skor Core Web Vitals tinggi.</li>
+              <li>Menerapkan standardisasi pipeline CI/CD dan automasi deployment berbasis Docker.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="rounded-lg border border-[#232838] bg-[#13161f] p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+              <h3 class="text-lg font-bold font-mono-code text-[#f8fafc]">Web & Backend Developer</h3>
+              <span class="text-xs font-mono-code text-[#38bdf8]">2021 - 2023</span>
+            </div>
+            <p class="text-xs font-mono-code text-[#64748b] mb-4">Software House / Digital Agency</p>
+            <ul class="space-y-2 text-sm text-[#94a3b8] list-disc list-inside">
+              <li>Mengembangkan modul e-commerce, integrasi payment gateway lokal, dan sinkronisasi webhook.</li>
+              <li>Melakukan optimasi query database PostgreSQL pada tabel ratusan ribu baris data.</li>
+              <li>Kolaborasi lintas disiplin bersama tim UI/UX untuk memastikan implementasi desain presisi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artikel & Catatan Teknis -->
+    <section id="artikel" class="py-16 md:py-24 border-b border-[#232838]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-xs font-mono-code text-[#38bdf8] uppercase tracking-wider block mb-2">// 04. Tulisan & Berbagi</span>
+            <h2 class="text-2xl sm:text-4xl font-bold font-mono-code text-[#f8fafc]">Artikel Teknis</h2>
+          </div>
+          <p class="text-sm text-[#94a3b8] max-w-md">
+            Dokumentasi pengalaman menyelesaikan tantangan teknis nyata dalam pengembangan perangkat lunak.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+          <!-- Article 1 -->
+          <article class="rounded-lg border border-[#232838] bg-[#13161f] p-6 hover:border-[#38bdf8]/50 transition-colors">
+            <span class="text-xs font-mono-code text-[#64748b] block mb-2">Arsitektur Backend • 6 min baca</span>
+            <h3 class="text-lg font-bold font-mono-code text-[#f8fafc] mb-3">
+              Membangun Sinkronisasi Status Real-time Menggunakan WebSocket Tanpa Memory Leak
+            </h3>
+            <p class="text-sm text-[#94a3b8] leading-relaxed mb-4">
+              Pembahasan seputar pengelolaan koneksi idle, mekanisme heartbeat, dan penanganan graceful shutdown pada server Node.js.
+            </p>
+            <span class="text-xs font-mono-code text-[#38bdf8] inline-flex items-center gap-1">
+              Catatan Internal Segera Diterbitkan
+            </span>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="rounded-lg border border-[#232838] bg-[#13161f] p-6 hover:border-[#38bdf8]/50 transition-colors">
+            <span class="text-xs font-mono-code text-[#64748b] block mb-2">Database & Optimasi • 8 min baca</span>
+            <h3 class="text-lg font-bold font-mono-code text-[#f8fafc] mb-3">
+              Menganalisis Query Lambat dengan EXPLAIN ANALYZE di PostgreSQL
+            </h3>
+            <p class="text-sm text-[#94a3b8] leading-relaxed mb-4">
+              Langkah terstruktur membaca cost query plan, memilih composite index yang tepat, dan menghindari sequential scan yang tidak diperlukan.
+            </p>
+            <span class="text-xs font-mono-code text-[#38bdf8] inline-flex items-center gap-1">
+              Catatan Internal Segera Diterbitkan
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak & Formulir Interaktif -->
+    <section id="kontak" class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl">
+          <span class="text-xs font-mono-code text-[#38bdf8] uppercase tracking-wider block mb-2">// 05. Hubungi Pengembang</span>
+          <h2 class="text-2xl sm:text-4xl font-bold font-mono-code text-[#f8fafc] mb-4">Mulai Diskusi Proyek</h2>
+          <p class="text-sm text-[#94a3b8] leading-relaxed mb-8">
+            Punya ide produk, kebutuhan integrasi sistem backend, atau peluang kolaborasi? Kirimkan pesan singkat melalui formulir di bawah ini atau hubungi langsung via email.
+          </p>
+
+          <!-- Form Kontak Interaktif -->
+          <form id="contact-form" class="space-y-5 rounded-lg border border-[#232838] bg-[#13161f] p-6 sm:p-8" novalidate>
+            <div>
+              <label for="contact-name" class="block text-xs font-mono-code text-[#f8fafc] mb-2">Nama Anda</label>
+              <input type="text" id="contact-name" name="name" required class="w-full px-4 py-2.5 rounded-md bg-[#0b0c10] border border-[#232838] text-sm text-[#f8fafc] placeholder-[#64748b] focus:border-[#38bdf8] focus:outline-none transition-colors" placeholder="Masukkan nama atau nama instansi" />
+              <p id="name-error" class="text-xs text-rose-400 mt-1 hidden" role="alert">Nama wajib diisi.</p>
+            </div>
+
+            <div>
+              <label for="contact-email" class="block text-xs font-mono-code text-[#f8fafc] mb-2">Alamat Email</label>
+              <input type="email" id="contact-email" name="email" required class="w-full px-4 py-2.5 rounded-md bg-[#0b0c10] border border-[#232838] text-sm text-[#f8fafc] placeholder-[#64748b] focus:border-[#38bdf8] focus:outline-none transition-colors" placeholder="nama@domain.com" />
+              <p id="email-error" class="text-xs text-rose-400 mt-1 hidden" role="alert">Format email tidak valid.</p>
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-mono-code text-[#f8fafc] mb-2">Pesan atau Rincian Kebutuhan</label>
+              <textarea id="contact-message" name="message" rows="4" required class="w-full px-4 py-2.5 rounded-md bg-[#0b0c10] border border-[#232838] text-sm text-[#f8fafc] placeholder-[#64748b] focus:border-[#38bdf8] focus:outline-none transition-colors" placeholder="Ceritakan gambaran singkat proyek atau ruang lingkup kerja yang ingin didiskusikan..."></textarea>
+              <p id="message-error" class="text-xs text-rose-400 mt-1 hidden" role="alert">Pesan tidak boleh kosong.</p>
+            </div>
+
+            <!-- Feedback States -->
+            <div id="form-feedback-success" class="hidden p-4 rounded-md bg-emerald-950/40 border border-emerald-500/50 text-xs font-mono-code text-emerald-300" role="status">
+              Pesan berhasil disiapkan! Aplikasi email Anda akan terbuka untuk mengirimkan data ini langsung.
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md bg-[#38bdf8] text-[#0b0c10] font-mono-code font-semibold text-sm hover:bg-[#7dd3fc] transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10] focus-visible:ring-[#38bdf8]">
+              Kirimkan Pesan Sekarang
+            </button>
+          </form>
+
+          <!-- Direct Alternative -->
+          <div class="mt-8 pt-6 border-t border-[#1a1e2b] flex flex-wrap items-center justify-between gap-4 text-xs font-mono-code text-[#94a3b8]">
+            <div>
+              <span>Email Langsung: </span>
+              <a href="mailto:gilang.ramadan.dev@example.com" class="text-[#f8fafc] hover:text-[#38bdf8] underline">
+                gilang.ramadan.dev@example.com
+              </a>
+            </div>
+            <div class="flex items-center gap-4">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-[#94a3b8] hover:text-[#f8fafc]">GitHub</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-[#94a3b8] hover:text-[#f8fafc]">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Detail Projek (R-26: working modal, Escape closes) -->
+  <dialog id="project-modal" class="bg-transparent backdrop:bg-black/80 p-4 max-w-lg w-full m-auto rounded-lg">
+    <div class="border border-[#232838] bg-[#13161f] p-6 rounded-lg text-[#f8fafc] space-y-4 shadow-2xl">
+      <div class="flex items-start justify-between">
+        <div>
+          <span id="modal-project-tag" class="text-xs font-mono-code text-[#38bdf8] block"></span>
+          <h3 id="modal-project-title" class="text-xl font-bold font-mono-code"></h3>
+        </div>
+        <button id="modal-close-btn" type="button" class="p-1 rounded text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1e2b]" aria-label="Tutup jendela rincian projek">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <p id="modal-project-desc" class="text-sm text-[#94a3b8] leading-relaxed"></p>
+      <div class="pt-4 border-t border-[#232838] flex justify-end gap-3">
+        <button id="modal-dismiss-btn" type="button" class="px-4 py-2 rounded text-xs font-mono-code bg-[#1a1e2b] text-[#94a3b8] hover:text-[#f8fafc]">
+          Tutup Jendela (Esc)
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#232838] bg-[#0b0c10] py-8 text-xs font-mono-code text-[#64748b]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Gilang Ramadan. Dirancang dengan prinsip kode bersih & performa terukur.</p>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-[#f8fafc] transition-colors">Kembali ke Atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
